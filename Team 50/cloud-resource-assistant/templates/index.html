@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cloud Assistant</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f5f5f5;
+        }
+
+        #composer {
+            display: flex;
+            gap: 8px;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        #composer input {
+            flex: 1;
+            max-width: 480px;
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        #recommendations {
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .risk {
+            font-weight: bold;
+            color: #c67c00;
+        }
+
+        #log {
+            margin-top: 12px;
+            min-height: 80px;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .decision {
+            border-left: 4px solid #2e7d32;
+            padding-left: 10px;
+            margin: 12px 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h2>Cloud Resource Assistant</h2>
+
+<h3>Conversation</h3>
+<div id="log"></div>
+
+<h3>AI Recommendations</h3>
+<div id="recommendations"></div>
+
+<div id="composer">
+    <input
+        type="text"
+        id="message"
+        placeholder="Enter your cloud request"
+    />
+    <button id="sendBtn" type="button">Send</button>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}?v=5"></script>
+
+</body>
+
+</html>
