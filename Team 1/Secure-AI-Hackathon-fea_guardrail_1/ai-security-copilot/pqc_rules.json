@@ -1,0 +1,211 @@
+
+{
+  "RSA-OAEP": {
+  "risk": "High",
+  "category": "Quantum Vulnerable Encryption",
+
+  "priority": "Immediate",
+
+  "reason": "RSA-OAEP relies on RSA mathematics and is vulnerable to Shor's algorithm on sufficiently powerful quantum computers.",
+
+  "migration": "Replace RSA-OAEP with hybrid ML-KEM-768 during the transition period and move toward pure ML-KEM when ecosystem support is available.",
+
+  "recommended_algorithm": [
+    "ML-KEM-768"
+  ],
+
+  "transition_strategy": "Hybrid",
+
+  "migration_wave": 1,
+
+  "estimated_effort": "Medium",
+
+  "estimated_hours": 24,
+
+  "owner": "Application Security",
+
+  "nist_reference": [
+    "FIPS 203",
+    "SP 1800-38B"
+  ],
+
+  "confidence": "High",
+
+  "auto_fix": false
+},
+"MD5": {
+
+  "risk": "Critical",
+
+  "priority": "Immediate",
+
+  "category": "Weak Hash Algorithm",
+
+  "reason": "MD5 is vulnerable to practical collision attacks and should not be used for security-sensitive applications.",
+
+  "migration": "Replace MD5 with SHA-256 or SHA-3.",
+
+  "recommended_algorithm": [
+    "SHA-256",
+    "SHA3-256"
+  ],
+
+  "transition_strategy": "Direct",
+
+  "migration_wave": 1,
+
+  "estimated_effort": "Low",
+
+  "estimated_hours": 8,
+
+  "owner": "Application Security",
+
+  "nist_reference": [
+    "FIPS 180-4"
+  ],
+
+  "confidence": "High",
+
+  "auto_fix": true
+},
+"AES-128": {
+
+  "risk": "Medium",
+
+  "priority": "Medium",
+
+  "category": "Symmetric Cryptography",
+
+  "reason": "AES-128 remains classically secure, but Grover's algorithm reduces its effective security margin.",
+
+  "migration": "Upgrade to AES-256 for long-term quantum resilience where practical.",
+
+  "recommended_algorithm": [
+    "AES-256"
+  ],
+
+  "transition_strategy": "Gradual",
+
+  "migration_wave": 2,
+
+  "estimated_effort": "Medium",
+
+  "estimated_hours": 12,
+
+  "owner": "Development Team",
+
+  "nist_reference": [
+    "FIPS 197"
+  ],
+
+  "confidence": "Medium",
+
+  "auto_fix": false
+},
+"SHA-1": {
+
+  "risk": "High",
+
+  "priority": "Immediate",
+
+  "category": "Weak Hash Algorithm",
+
+  "reason": "SHA-1 has known collision vulnerabilities and is not recommended for security-sensitive applications.",
+
+  "migration": "Replace SHA-1 with SHA-256, SHA-384, or SHA-3.",
+
+  "recommended_algorithm": [
+    "SHA-256",
+    "SHA-3"
+  ],
+
+  "transition_strategy": "Direct",
+
+  "migration_wave": 1,
+
+  "estimated_effort": "Low",
+
+  "estimated_hours": 8,
+
+  "owner": "Application Security",
+
+  "nist_reference": [
+    "FIPS 180-4"
+  ],
+
+  "confidence": "High",
+
+  "auto_fix": true
+},
+"RSA": {
+
+  "risk": "High",
+
+  "priority": "Immediate",
+
+  "category": "Quantum Vulnerable Public Key Cryptography",
+
+  "reason": "RSA relies on integer factorization and is vulnerable to Shor's algorithm on sufficiently powerful quantum computers.",
+
+  "migration": "Replace RSA encryption and key establishment with ML-KEM based hybrid cryptography. For signatures migrate toward ML-DSA.",
+
+  "recommended_algorithm": [
+    "ML-KEM-768",
+    "ML-DSA"
+  ],
+
+  "transition_strategy": "Hybrid",
+
+  "migration_wave": 1,
+
+  "estimated_effort": "High",
+
+  "estimated_hours": 40,
+
+  "owner": "Application Security",
+
+  "nist_reference": [
+    "FIPS 203",
+    "FIPS 204",
+    "SP 1800-38B"
+  ],
+
+  "confidence": "High",
+
+  "auto_fix": false
+},
+"AES-256": {
+
+  "risk": "Low",
+
+  "priority": "Low",
+
+  "category": "Symmetric Cryptography",
+
+  "reason": "AES-256 provides strong security against classical and quantum attacks when properly implemented.",
+
+  "migration": "Continue using AES-256 with proper key management practices.",
+
+  "recommended_algorithm": [
+    "AES-256"
+  ],
+
+  "transition_strategy": "Maintain",
+
+  "migration_wave": 3,
+
+  "estimated_effort": "None",
+
+  "estimated_hours": 0,
+
+  "owner": "Development Team",
+
+  "nist_reference": [
+    "FIPS 197"
+  ],
+
+  "confidence": "High",
+
+  "auto_fix": false
+}
+}

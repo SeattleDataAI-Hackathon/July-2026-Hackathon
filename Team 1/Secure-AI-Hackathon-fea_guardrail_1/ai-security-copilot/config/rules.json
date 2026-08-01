@@ -1,0 +1,327 @@
+{
+  "RSA": {
+    "description": "RSA public-key cryptography",
+    "type": "Asymmetric Encryption / Key Exchange",
+
+    "key_sizes": {
+      "1024": {
+        "risk": "Critical",
+        "priority": "Immediate",
+        "quantum_vulnerable": true,
+        "migration_wave": 1,
+        "recommended_action": "Replace with Hybrid ML-KEM"
+      },
+
+      "2048": {
+        "risk": "High",
+        "priority": "High",
+        "quantum_vulnerable": true,
+        "migration_wave": 1,
+        "recommended_action": "Replace with Hybrid ML-KEM"
+      },
+
+      "3072": {
+        "risk": "Medium",
+        "priority": "Medium",
+        "quantum_vulnerable": true,
+        "migration_wave": 2,
+        "recommended_action": "Plan migration to Hybrid ML-KEM"
+      },
+
+      "4096": {
+        "risk": "Medium",
+        "priority": "Low",
+        "quantum_vulnerable": true,
+        "migration_wave": 2,
+        "recommended_action": "Plan migration to Hybrid ML-KEM"
+      }
+    },
+
+    "hybrid_target": "RSA + ML-KEM-768",
+    "future_target": "ML-KEM",
+    "references": [
+      "NIST FIPS 203",
+      "NIST SP 1800-38B"
+    ]
+  },
+
+  "ECC": {
+    "description": "Elliptic Curve Cryptography",
+    "type": "Asymmetric Encryption / Digital Signature / Key Exchange",
+
+    "curves": {
+      "P-256": {
+        "risk": "High",
+        "priority": "Wave 1",
+        "quantum_vulnerable": true,
+        "migration_wave": 1,
+        "recommended_action": "Replace with Hybrid ML-KEM for key exchange and ML-DSA for signatures"
+      },
+
+      "P-384": {
+        "risk": "High",
+        "priority": "Wave 1",
+        "quantum_vulnerable": true,
+        "migration_wave": 1,
+        "recommended_action": "Replace with Hybrid ML-KEM and ML-DSA"
+      },
+
+      "P-521": {
+        "risk": "High",
+        "priority": "Wave 1",
+        "quantum_vulnerable": true,
+        "migration_wave": 1,
+        "recommended_action": "Replace with PQC algorithms"
+      }
+    },
+
+    "hybrid_target": "ECDH + ML-KEM-768",
+    "signature_target": "ECDSA + ML-DSA",
+    "future_target": "ML-KEM + ML-DSA",
+
+    "references": [
+      "NIST FIPS 203",
+      "NIST FIPS 204",
+      "NIST SP 1800-38B"
+    ]
+  }
+}
+,
+  "SHA": {
+    "description": "Secure Hash Algorithms",
+    "type": "Hash Function",
+
+    "algorithms": {
+      "MD5": {
+        "risk": "Critical",
+        "priority": "Immediate",
+        "quantum_vulnerable": true,
+        "reason": "MD5 is cryptographically broken due to collision attacks",
+        "migration_wave": 1,
+        "recommended_action": "Replace with SHA-256 or stronger hash algorithms"
+      },
+
+      "SHA-1": {
+        "risk": "High",
+        "priority": "Immediate",
+        "quantum_vulnerable": true,
+        "reason": "SHA-1 is vulnerable to collision attacks and has reduced quantum security margin",
+        "migration_wave": 1,
+        "recommended_action": "Replace with SHA-256, SHA-384, or SHA-512"
+      },
+
+      "SHA-256": {
+        "risk": "Low",
+        "priority": "Monitor",
+        "quantum_vulnerable": false,
+        "reason": "Approved modern hash algorithm with acceptable quantum security level",
+        "migration_wave": 3,
+        "recommended_action": "Continue usage; consider SHA-384/512 for long-term security"
+      },
+
+      "SHA-384": {
+        "risk": "Low",
+        "priority": "Monitor",
+        "quantum_vulnerable": false,
+        "reason": "Provides stronger security margin against quantum attacks",
+        "migration_wave": 3,
+        "recommended_action": "Approved for long-term cryptographic use"
+      },
+
+      "SHA-512": {
+        "risk": "Low",
+        "priority": "Monitor",
+        "quantum_vulnerable": false,
+        "reason": "Strong hash algorithm with high security margin",
+        "migration_wave": 3,
+        "recommended_action": "Approved for long-term cryptographic use"
+      }
+    },
+
+    "references": [
+      "NIST SP 800-131A",
+      "NIST SP 1800-38B"
+    ]
+  },
+  "AES": {
+    "description": "Advanced Encryption Standard",
+    "type": "Symmetric Encryption",
+
+    "key_sizes": {
+      "128": {
+        "risk": "Medium",
+        "priority": "Wave 2",
+        "quantum_vulnerable": true,
+        "reason": "Grover's algorithm reduces effective security strength approximately by half",
+        "effective_security": "64-bit security against quantum search",
+        "migration_wave": 2,
+        "recommended_action": "Upgrade to AES-256 for long-term protection"
+      },
+
+      "192": {
+        "risk": "Low",
+        "priority": "Monitor",
+        "quantum_vulnerable": true,
+        "reason": "Provides higher security margin but not commonly preferred",
+        "effective_security": "96-bit security against quantum search",
+        "migration_wave": 3,
+        "recommended_action": "Prefer AES-256 for future systems"
+      },
+
+      "256": {
+        "risk": "Low",
+        "priority": "Approved",
+        "quantum_vulnerable": false,
+        "reason": "Maintains strong security margin against quantum attacks",
+        "effective_security": "128-bit security against quantum search",
+        "migration_wave": 3,
+        "recommended_action": "Continue usage"
+      }
+    },
+
+    "references": [
+      "NIST FIPS 197",
+      "NIST SP 800-57",
+      "NIST SP 1800-38B"
+    ]
+  }
+,
+  "deprecated_algorithms": {
+    "description": "Legacy cryptographic algorithms with known security weaknesses",
+    "type": "Deprecated Cryptography",
+
+    "algorithms": {
+
+      "DES": {
+        "risk": "Critical",
+        "priority": "Immediate",
+        "quantum_vulnerable": true,
+        "reason": "Small 56-bit key size makes brute-force attacks practical",
+        "migration_wave": 1,
+        "recommended_action": "Replace with AES-256"
+      },
+
+      "3DES": {
+        "risk": "High",
+        "priority": "Immediate",
+        "quantum_vulnerable": true,
+        "reason": "Limited security strength and deprecated by NIST",
+        "migration_wave": 1,
+        "recommended_action": "Replace with AES-256"
+      },
+
+      "RC4": {
+        "risk": "Critical",
+        "priority": "Immediate",
+        "quantum_vulnerable": false,
+        "reason": "Known statistical weaknesses and insecure key scheduling",
+        "migration_wave": 1,
+        "recommended_action": "Replace with AES-based encryption"
+      },
+
+      "MD4": {
+        "risk": "Critical",
+        "priority": "Immediate",
+        "quantum_vulnerable": false,
+        "reason": "Cryptographically broken hash function",
+        "migration_wave": 1,
+        "recommended_action": "Replace with SHA-256 or stronger"
+      },
+
+      "Blowfish": {
+        "risk": "Medium",
+        "priority": "Wave 2",
+        "quantum_vulnerable": false,
+        "reason": "Aging algorithm with limited modern support",
+        "migration_wave": 2,
+        "recommended_action": "Replace with AES-256"
+      }
+    },
+
+    "references": [
+      "NIST SP 800-131A",
+      "NIST SP 800-57"
+    ]
+  },
+  "PQC_algorithms": {
+    "description": "NIST standardized Post-Quantum Cryptography algorithms",
+    "type": "Quantum Resistant Cryptography",
+
+    "algorithms": {
+
+      "ML-KEM-512": {
+        "category": "Key Encapsulation Mechanism",
+        "standard": "NIST FIPS 203",
+        "status": "Approved",
+        "quantum_vulnerable": false,
+        "security_level": "NIST Level 1",
+        "recommended_usage": "General purpose key establishment",
+        "migration_role": "Future PQC replacement for RSA/ECDH"
+      },
+
+      "ML-KEM-768": {
+        "category": "Key Encapsulation Mechanism",
+        "standard": "NIST FIPS 203",
+        "status": "Approved",
+        "quantum_vulnerable": false,
+        "security_level": "NIST Level 3",
+        "recommended_usage": "Enterprise systems and long-term protection",
+        "migration_role": "Preferred hybrid migration target for RSA/ECC",
+        "recommended_hybrid": "RSA-2048 + ML-KEM-768 / ECDH + ML-KEM-768"
+      },
+
+      "ML-KEM-1024": {
+        "category": "Key Encapsulation Mechanism",
+        "standard": "NIST FIPS 203",
+        "status": "Approved",
+        "quantum_vulnerable": false,
+        "security_level": "NIST Level 5",
+        "recommended_usage": "Highly sensitive government or critical systems",
+        "migration_role": "High-security PQC deployment"
+      },
+
+      "ML-DSA-44": {
+        "category": "Digital Signature Algorithm",
+        "standard": "NIST FIPS 204",
+        "status": "Approved",
+        "quantum_vulnerable": false,
+        "security_level": "NIST Level 2",
+        "migration_role": "Replacement for ECDSA/RSA signatures"
+      },
+
+      "ML-DSA-65": {
+        "category": "Digital Signature Algorithm",
+        "standard": "NIST FIPS 204",
+        "status": "Approved",
+        "quantum_vulnerable": false,
+        "security_level": "NIST Level 3",
+        "recommended_usage": "Enterprise digital signatures",
+        "migration_role": "Preferred replacement for ECDSA"
+      },
+
+      "ML-DSA-87": {
+        "category": "Digital Signature Algorithm",
+        "standard": "NIST FIPS 204",
+        "status": "Approved",
+        "quantum_vulnerable": false,
+        "security_level": "NIST Level 5",
+        "migration_role": "High assurance signatures"
+      },
+
+      "SLH-DSA": {
+        "category": "Hash Based Digital Signature",
+        "standard": "NIST FIPS 205",
+        "status": "Approved",
+        "quantum_vulnerable": false,
+        "recommended_usage": "Alternative digital signature approach",
+        "migration_role": "Backup signature migration option"
+      }
+    },
+
+    "references": [
+      "NIST FIPS 203",
+      "NIST FIPS 204",
+      "NIST FIPS 205",
+      "NIST SP 1800-38B"
+    ]
+  }

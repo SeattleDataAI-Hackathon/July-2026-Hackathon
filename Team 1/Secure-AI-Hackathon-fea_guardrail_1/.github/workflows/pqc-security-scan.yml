@@ -1,0 +1,311 @@
+name: PQC Security Scan
+
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - "*"
+
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+
+jobs:
+
+  pqc-scan:
+
+    runs-on: ubuntu-latest
+
+
+    defaults:
+      run:
+        working-directory: ./ai-security-copilot
+
+
+    steps:
+
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+
+
+      - name: Cache HuggingFace Models
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: huggingface-model-cache-v1
+          restore-keys: |
+            huggingface-model-cache-
+
+
+
+      - name: Install dependencies
+        run: |
+
+          python -m pip install --upgrade pip
+
+          pip install --no-cache-dir -r requirements.txt
+
+          pip uninstall -y mistralai || true
+
+          pip install --no-cache-dir mistralai==1.0.2
+
+
+
+
+      - name: Verify Mistral SDK
+        run: |
+
+          python3 -c "
+          from mistralai import Mistral
+          print('Mistral SDK loaded successfully!')
+          "
+
+
+
+
+      # ==============================
+      # CBOM ANALYSIS
+      # ==============================
+
+      - name: Run CBOM Security Analysis
+        run: |
+
+          python3 cbom_parser.py
+
+
+
+
+      # ==============================
+      # SONARQUBE ANALYSIS
+      # ==============================
+
+      - name: Parse SonarQube Findings
+        run: |
+
+          python3 sonarqube_parser.py
+
+
+
+
+      - name: Combine CBOM and Sonar Context
+        run: |
+
+          python3 sonar_integration.py
+
+
+
+
+      # ==============================
+      # PQC INTELLIGENCE
+      # ==============================
+
+      - name: Run PQC Rule Engine
+        run: |
+
+          python3 rule_engine.py
+
+
+
+
+      - name: Generate Remediation Plan
+        run: |
+
+          python3 remediation_engine.py
+
+
+
+
+      # ==============================
+      # RAG KNOWLEDGE BASE
+      # ==============================
+
+      - name: Ingest NIST Knowledge Base
+        env:
+          HF_HOME: ~/.cache/huggingface
+          TRANSFORMERS_CACHE: ~/.cache/huggingface
+          HF_HUB_DISABLE_SYMLINKS_WARNING: "1"
+        run: |
+          python3 ingest_documents.py
+
+
+      # ==============================
+      # AI SECURITY AGENT + GUARDRAILS
+      # ==============================
+
+      - name: Generate AI Security Report (with Guardrails)
+
+        env:
+
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+
+          HF_HOME: ~/.cache/huggingface
+
+          TRANSFORMERS_CACHE: ~/.cache/huggingface
+
+          HF_HUB_DISABLE_SYMLINKS_WARNING: "1"
+
+
+        run: |
+
+          python3 agent.py
+
+
+
+
+      # ==============================
+      # STORE REPORT
+      # ==============================
+
+      - name: Upload Security Report Artifact
+
+        if: always()
+
+        uses: actions/upload-artifact@v4
+
+
+        with:
+
+          name: quantum-security-report
+
+          path: |
+            ai-security-copilot/output/quantum_security_report.md
+            ai-security-copilot/output/guardrail_results.json
+
+
+
+
+
+      # ==============================
+      # PR COMMENT
+      # ==============================
+
+      - name: Comment Security Report on PR
+
+        if: github.event_name == 'pull_request'
+
+        uses: actions/github-script@v7
+
+
+        with:
+
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+
+          script: |
+
+            const fs = require('fs');
+
+
+            const reportPath =
+              'ai-security-copilot/output/quantum_security_report.md';
+
+            const guardrailPath =
+              'ai-security-copilot/output/guardrail_results.json';
+
+
+            if (!fs.existsSync(reportPath)) {
+
+              core.warning(
+                "Security report was not generated."
+              );
+
+              return;
+
+            }
+
+
+            const report = fs.readFileSync(
+              reportPath,
+              'utf8'
+            );
+
+
+            // Build guardrail summary
+            let guardrailSection = '';
+
+            if (fs.existsSync(guardrailPath)) {
+
+              const guardrails = JSON.parse(
+                fs.readFileSync(guardrailPath, 'utf8')
+              );
+
+              const pre = guardrails.pre_generation;
+              const post = guardrails.post_generation;
+
+              const injectionStatus = pre.passed
+                ? '✅ Passed' : `⚠️ ${pre.threat_count} threat(s) detected`;
+
+              const hallucinationStatus = post.hallucination_check.passed
+                ? '✅ Passed' : `⚠️ ${post.hallucination_check.violation_count} violation(s)`;
+
+              const outputStatus = post.output_validation.passed
+                ? '✅ Passed' : `⚠️ ${post.output_validation.violation_count} issue(s)`;
+
+              const completeness = post.output_validation.completeness_score;
+
+              guardrailSection = `
+
+            ---
+
+            ## 🛡️ AI Guardrail Validation
+
+            | Guardrail | Status |
+            |-----------|--------|
+            | Prompt Injection Protection | ${injectionStatus} |
+            | Hallucination Detection | ${hallucinationStatus} |
+            | Output Validation | ${outputStatus} |
+
+            **Report Completeness:** ${completeness}%
+
+            `;
+
+              // Add violation details if any failed
+              if (!post.hallucination_check.passed) {
+                guardrailSection += '\n<details><summary>Hallucination Details</summary>\n\n';
+                for (const v of post.hallucination_check.violations) {
+                  guardrailSection += `- **[${v.severity.toUpperCase()}]** ${v.detail}\n`;
+                }
+                guardrailSection += '\n</details>\n';
+              }
+
+              if (!post.output_validation.passed) {
+                guardrailSection += '\n<details><summary>Output Validation Details</summary>\n\n';
+                for (const v of post.output_validation.violations) {
+                  guardrailSection += `- **[${v.severity.toUpperCase()}]** ${v.detail}\n`;
+                }
+                guardrailSection += '\n</details>\n';
+              }
+
+            }
+
+
+            await github.rest.issues.createComment({
+
+              owner: context.repo.owner,
+
+              repo: context.repo.repo,
+
+              issue_number: context.issue.number,
+
+              body:
+                "## 🔐 PQC Security Assessment Report\n\n" +
+                report +
+                guardrailSection
+
+            });

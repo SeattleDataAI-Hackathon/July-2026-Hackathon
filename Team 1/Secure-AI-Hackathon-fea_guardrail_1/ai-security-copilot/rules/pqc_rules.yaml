@@ -1,0 +1,169 @@
+version: "1.0"
+
+metadata:
+  name: "PQC Security Rule Engine"
+  description: "Rules for Post Quantum Cryptography readiness assessment"
+  sources:
+    - "NIST FIPS 203 ML-KEM"
+    - "NIST FIPS 204 ML-DSA"
+    - "NIST FIPS 205 SLH-DSA"
+    - "NSA CNSA 2.0"
+
+rules:
+
+  - id: PQC-RSA-001
+    name: RSA 1024 Detection
+    category: Public Key Cryptography
+
+    condition:
+      algorithm:
+        - RSA
+      key_size:
+        max: 1024
+
+    severity: CRITICAL
+
+    quantum_status: VULNERABLE
+
+    reason:
+      RSA-1024 provides insufficient security and is vulnerable
+      to quantum attacks using Shor's algorithm.
+
+    recommendation:
+      migrate_to:
+        - ML-KEM-768
+        - ML-DSA
+
+
+  - id: PQC-RSA-002
+    name: RSA 2048 Detection
+    category: Public Key Cryptography
+
+    condition:
+      algorithm:
+        - RSA
+      key_size:
+        exact: 2048
+
+    severity: HIGH
+
+    quantum_status: VULNERABLE
+
+    reason:
+      RSA-2048 is currently secure against classical attacks
+      but is not quantum resistant.
+
+    recommendation:
+      hybrid:
+        - RSA-2048 + ML-KEM-768
+
+      future:
+        - ML-KEM
+
+
+  - id: PQC-RSA-003
+    name: RSA 3072 Detection
+
+    condition:
+      algorithm:
+        - RSA
+      key_size:
+        exact: 3072
+
+    severity: MEDIUM
+
+    quantum_status: VULNERABLE
+
+    recommendation:
+      hybrid:
+        - RSA-3072 + ML-KEM-768
+
+
+  - id: PQC-ECC-001
+    name: Elliptic Curve Cryptography Detection
+
+    condition:
+      algorithm:
+        - ECC
+        - ECDSA
+        - ECDH
+        - X25519
+
+    severity: HIGH
+
+    quantum_status: VULNERABLE
+
+    recommendation:
+
+      key_exchange:
+        migrate_to: ML-KEM
+
+      signatures:
+        migrate_to: ML-DSA
+
+
+
+  - id: PQC-HASH-001
+    name: SHA1 Detection
+
+    condition:
+      algorithm:
+        - SHA1
+        - SHA-1
+
+    severity: HIGH
+
+    recommendation:
+      replace_with:
+        - SHA-256
+        - SHA-3
+
+
+
+  - id: PQC-HASH-002
+    name: MD5 Detection
+
+    condition:
+      algorithm:
+        - MD5
+
+    severity: CRITICAL
+
+    recommendation:
+      replace_with:
+        - SHA-256
+        - SHA-3
+
+
+
+  - id: PQC-KEY-001
+    name: Private Key Exposure
+
+    condition:
+      asset_type:
+        - private-key
+
+    severity: CRITICAL
+
+    recommendation:
+      actions:
+        - Remove key from source code
+        - Rotate compromised keys
+        - Use enterprise key management
+
+
+
+  - id: PQC-HYBRID-001
+    name: Hybrid PQC Detection
+
+    condition:
+
+      contains:
+        - ML-KEM
+        - ML-DSA
+
+    severity: LOW
+
+    quantum_status: HYBRID_READY
+
+    score_bonus: 10

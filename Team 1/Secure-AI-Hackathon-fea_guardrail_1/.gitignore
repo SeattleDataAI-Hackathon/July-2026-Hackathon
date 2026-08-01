@@ -1,0 +1,86 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.env
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Java
+target/
+*.class
+
+# Node
+node_modules/
+
+# Secrets
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.env
+*.token
+
+# Large AI models
+*.gguf
+*.bin
+models/
+
+# Build outputs
+dist/
+build/
+
+# Generated reports (optional)
+# Uncomment if you don't want generated files
+# cbom-reports/
+# SonarQube local installation
+sonarqube/
+sonarqube-*.zip
+
+# Sonar plugins/builds
+sonar-cryptography/
+
+# Node binaries
+**/js/node/node
+
+# Java build
+**/target/
+*.class
+
+# Python
+**/__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Generated reports
+**/reports/
+**/cbom-reports/*.json
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Secrets
+*.pem
+*.key
+*.p12
+*.pfx
+.env
+# Ignore nested repositories
+**/.git/
+venv/
+vector_db/
+output/

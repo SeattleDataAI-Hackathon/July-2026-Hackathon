@@ -1,0 +1,2555 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:20d22e19-4a58-48fe-995b-58ba6c94a06f",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-07-30T15:41:07Z",
+    "tools": {
+      "services": [
+        {
+          "provider": {
+            "name": "IBM"
+          },
+          "name": "Sonar Cryptography Plugin",
+          "version": "2.0.0-SNAPSHOT"
+        },
+        {
+          "provider": {
+            "name": "PQCA"
+          },
+          "name": "cbomkit-theia",
+          "version": "edge",
+          "services": [
+            {
+              "name": "Certificate File Plugin"
+            },
+            {
+              "name": "Secret Detection Plugin"
+            },
+            {
+              "name": "OpenSSL Config Plugin"
+            },
+            {
+              "name": "java.security Plugin"
+            },
+            {
+              "name": "Problematic CA Detection Plugin"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "c08e03ba-661d-4430-95ec-dfc5f05f5c90",
+      "type": "cryptographic-asset",
+      "name": "secret-key@c08e03ba-661d-4430-95ec-dfc5f05f5c90",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge32.java",
+            "line": 40,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "5d30a4fe-11ff-4701-9e5f-18fb6b002c16",
+      "type": "cryptographic-asset",
+      "name": "secret-key@5d30a4fe-11ff-4701-9e5f-18fb6b002c16",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/kubernetes/Challenge33.java",
+            "line": 54,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "b33aac8d-722e-41e1-bfb8-34a23785db20",
+      "type": "cryptographic-asset",
+      "name": "AES-128",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge26.java",
+            "line": 36,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/kubernetes/Challenge33.java",
+            "line": 54,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge39.java",
+            "line": 51,
+            "offset": 32,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge39.java",
+            "line": 56,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge49.java",
+            "line": 85,
+            "offset": 32,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge49.java",
+            "line": 89,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge13.java",
+            "line": 62,
+            "offset": 34,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge27.java",
+            "line": 36,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge15.java",
+            "line": 65,
+            "offset": 34,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge32.java",
+            "line": 40,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge25.java",
+            "line": 36,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge63.java",
+            "line": 38,
+            "offset": 34,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge54.java",
+            "line": 38,
+            "offset": 36,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge40.java",
+            "line": 52,
+            "offset": 32,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge40.java",
+            "line": 57,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "128",
+          "cryptoFunctions": [
+            "keygen"
+          ]
+        },
+        "oid": "2.16.840.1.101.3.4.1"
+      }
+    },
+    {
+      "bom-ref": "fb692480-3cba-4904-b0d1-3a5148a7c888",
+      "type": "cryptographic-asset",
+      "name": "SHA-1",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge18.java",
+            "line": 57,
+            "offset": 25
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge18.java",
+            "line": 58,
+            "offset": 34
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/ChallengesController.java",
+            "line": 312,
+            "offset": 12,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/ChallengesController.java",
+            "line": 314,
+            "offset": 16,
+            "additionalContext": "javax.crypto.Mac#getInstance(Ljava/lang/String;)Ljavax/crypto/Mac;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "160",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        },
+        "oid": "1.3.14.3.2.26"
+      }
+    },
+    {
+      "bom-ref": "db9a1625-1dcc-44c3-bc59-322d8f7eef6c",
+      "type": "cryptographic-asset",
+      "name": "secret-key@db9a1625-1dcc-44c3-bc59-322d8f7eef6c",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge35.java",
+            "line": 56,
+            "offset": 20,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 256
+        }
+      }
+    },
+    {
+      "bom-ref": "d493fb62-3521-45c1-a22a-861d2ffdca4c",
+      "type": "cryptographic-asset",
+      "name": "secret-key@d493fb62-3521-45c1-a22a-861d2ffdca4c",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge25.java",
+            "line": 34,
+            "offset": 31,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "b1fa356a-a2d6-458b-93d5-7db496e6b3ac",
+      "type": "cryptographic-asset",
+      "name": "RSA-OAEP",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge29.java",
+            "line": 29,
+            "offset": 20,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "2048",
+          "mode": "ecb",
+          "padding": "oaep",
+          "cryptoFunctions": [
+            "decrypt"
+          ]
+        },
+        "oid": "1.2.840.113549.1.1.7"
+      }
+    },
+    {
+      "bom-ref": "a3c56fcb-19cf-444e-a1f3-cfbfd9dd3c17",
+      "type": "cryptographic-asset",
+      "name": "iv@a3c56fcb-19cf-444e-a1f3-cfbfd9dd3c17",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge35.java",
+            "line": 51,
+            "offset": 29,
+            "additionalContext": "javax.crypto.spec.IvParameterSpec#\u003cinit\u003e([B)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "initialization-vector",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "818dfe34-785c-42ba-bed5-bc3965c14a44",
+      "type": "cryptographic-asset",
+      "name": "secret-key@818dfe34-785c-42ba-bed5-bc3965c14a44",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge63.java",
+            "line": 41,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "f1739159-493a-4eaf-99f6-061f9f66705d",
+      "type": "cryptographic-asset",
+      "name": "secret-key@f1739159-493a-4eaf-99f6-061f9f66705d",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge27.java",
+            "line": 36,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "5132b7de-7ccc-4436-baea-f6cb891afa32",
+      "type": "cryptographic-asset",
+      "name": "secret-key@5132b7de-7ccc-4436-baea-f6cb891afa32",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge25.java",
+            "line": 36,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "96ff38da-bfb4-4b48-a3ef-098f7f080c60",
+      "type": "cryptographic-asset",
+      "name": "secret-key@96ff38da-bfb4-4b48-a3ef-098f7f080c60",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge26.java",
+            "line": 36,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "3ecf2dcc-3048-417e-9f3e-c475ba200e94",
+      "type": "cryptographic-asset",
+      "name": "iv@3ecf2dcc-3048-417e-9f3e-c475ba200e94",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge15.java",
+            "line": 74,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.GCMParameterSpec#\u003cinit\u003e(I[B)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "initialization-vector",
+          "size": 96
+        }
+      }
+    },
+    {
+      "bom-ref": "73a59cf1-b898-45e9-bff8-bca27f51e08f",
+      "type": "cryptographic-asset",
+      "name": "iv@73a59cf1-b898-45e9-bff8-bca27f51e08f",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge13.java",
+            "line": 71,
+            "offset": 14,
+            "additionalContext": "javax.crypto.spec.GCMParameterSpec#\u003cinit\u003e(I[B)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "initialization-vector",
+          "size": 96
+        }
+      }
+    },
+    {
+      "bom-ref": "9176730b-182d-4bd6-9538-b0acc5bbd0ec",
+      "type": "cryptographic-asset",
+      "name": "AES-128-GCM",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge26.java",
+            "line": 34,
+            "offset": 31,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/kubernetes/Challenge33.java",
+            "line": 52,
+            "offset": 31,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge13.java",
+            "line": 61,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge27.java",
+            "line": 34,
+            "offset": 31,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge15.java",
+            "line": 64,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge32.java",
+            "line": 38,
+            "offset": 31,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge25.java",
+            "line": 34,
+            "offset": 31,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "parameterSetIdentifier": "128",
+          "mode": "gcm",
+          "cryptoFunctions": [
+            "decrypt"
+          ]
+        },
+        "oid": "2.16.840.1.101.3.4.1.6"
+      }
+    },
+    {
+      "bom-ref": "8842a253-7890-46ba-99f7-fb4c8c0ab223",
+      "type": "cryptographic-asset",
+      "name": "secret-key@8842a253-7890-46ba-99f7-fb4c8c0ab223",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge49.java",
+            "line": 85,
+            "offset": 32,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "bom-ref": "180a3f5c-8c0c-4f60-abba-c118f3966575",
+      "type": "cryptographic-asset",
+      "name": "RSA-2048",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge29.java",
+            "line": 70,
+            "offset": 22,
+            "additionalContext": "java.security.KeyFactory#getInstance(Ljava/lang/String;)Ljava/security/KeyFactory;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "parameterSetIdentifier": "2048",
+          "cryptoFunctions": [
+            "keygen"
+          ]
+        },
+        "oid": "1.2.840.113549.1.1.1"
+      }
+    },
+    {
+      "bom-ref": "ba679816-46a3-4e57-a52e-87f180edfb14",
+      "type": "cryptographic-asset",
+      "name": "secret-key@ba679816-46a3-4e57-a52e-87f180edfb14",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge15.java",
+            "line": 64,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "59936cf7-2b41-4206-9fd9-ad40747fdce4",
+      "type": "cryptographic-asset",
+      "name": "secret-key@59936cf7-2b41-4206-9fd9-ad40747fdce4",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge13.java",
+            "line": 61,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "876392d2-c9b2-4042-91ae-3476928ae4a7",
+      "type": "cryptographic-asset",
+      "name": "secret-key@876392d2-c9b2-4042-91ae-3476928ae4a7",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge26.java",
+            "line": 34,
+            "offset": 31,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "00a5417e-3ab6-4083-9702-511282b9d2e0",
+      "type": "cryptographic-asset",
+      "name": "secret-key@00a5417e-3ab6-4083-9702-511282b9d2e0",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge15.java",
+            "line": 65,
+            "offset": 34,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "6f2dc7dd-19c1-4848-8157-5bfa1ff6ecd2",
+      "type": "cryptographic-asset",
+      "name": "secret-key@6f2dc7dd-19c1-4848-8157-5bfa1ff6ecd2",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge35.java",
+            "line": 53,
+            "offset": 12,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 256
+        }
+      }
+    },
+    {
+      "bom-ref": "9fd35561-e9a5-4296-83a8-c25735440887",
+      "type": "cryptographic-asset",
+      "name": "secret-key@9fd35561-e9a5-4296-83a8-c25735440887",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge40.java",
+            "line": 57,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "bom-ref": "fa00384d-2985-4a9f-a629-5f655f129109",
+      "type": "cryptographic-asset",
+      "name": "secret-key@fa00384d-2985-4a9f-a629-5f655f129109",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge27.java",
+            "line": 34,
+            "offset": 31,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "c6daf860-b419-4939-a3a2-5a2d9d00981f",
+      "type": "cryptographic-asset",
+      "name": "MGF1",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge29.java",
+            "line": 29,
+            "offset": 20,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "other"
+        },
+        "oid": "1.2.840.113549.1.1.8"
+      }
+    },
+    {
+      "bom-ref": "8a18d367-5cef-43f0-b394-18f84014346b",
+      "type": "cryptographic-asset",
+      "name": "HMAC-SHA-1",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/ChallengesController.java",
+            "line": 312,
+            "offset": 12,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/ChallengesController.java",
+            "line": 314,
+            "offset": 16,
+            "additionalContext": "javax.crypto.Mac#getInstance(Ljava/lang/String;)Ljavax/crypto/Mac;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "cryptoFunctions": [
+            "keygen",
+            "tag"
+          ]
+        },
+        "oid": "1.2.840.113549.2.7"
+      }
+    },
+    {
+      "bom-ref": "cbb78b09-a4b3-4a8a-8e2b-96dfcf17031e",
+      "type": "cryptographic-asset",
+      "name": "secret-key@cbb78b09-a4b3-4a8a-8e2b-96dfcf17031e",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/ChallengesController.java",
+            "line": 312,
+            "offset": 12,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "bom-ref": "68fdd81a-434c-4825-9aee-ad3c7f37cbe5",
+      "type": "cryptographic-asset",
+      "name": "AES-256-CBC-PKCS5",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge35.java",
+            "line": 56,
+            "offset": 20,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "256",
+          "mode": "cbc",
+          "padding": "pkcs5",
+          "cryptoFunctions": [
+            "decrypt"
+          ]
+        },
+        "oid": "2.16.840.1.101.3.4.1.42"
+      }
+    },
+    {
+      "bom-ref": "c95f05e3-3fdb-4246-a55f-d4410b4ffcae",
+      "type": "cryptographic-asset",
+      "name": "iv@c95f05e3-3fdb-4246-a55f-d4410b4ffcae",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge63.java",
+            "line": 39,
+            "offset": 35,
+            "additionalContext": "javax.crypto.spec.IvParameterSpec#\u003cinit\u003e([B)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "initialization-vector",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "a11d413b-65da-4e8a-a2aa-737c57b4287d",
+      "type": "cryptographic-asset",
+      "name": "secret-key@a11d413b-65da-4e8a-a2aa-737c57b4287d",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge49.java",
+            "line": 89,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "bom-ref": "7e54cd39-2483-42f3-b1b9-4690d0aef92c",
+      "type": "cryptographic-asset",
+      "name": "secret-key@7e54cd39-2483-42f3-b1b9-4690d0aef92c",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge32.java",
+            "line": 38,
+            "offset": 31,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "49327176-304c-43fd-8726-bd185f722bd5",
+      "type": "cryptographic-asset",
+      "name": "secret-key@49327176-304c-43fd-8726-bd185f722bd5",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge40.java",
+            "line": 52,
+            "offset": 32,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "bom-ref": "8dd5d1b0-a67d-4b06-b288-41dc9d97bda4",
+      "type": "cryptographic-asset",
+      "name": "AES-256",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge35.java",
+            "line": 53,
+            "offset": 12,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "keygen"
+          ]
+        },
+        "oid": "2.16.840.1.101.3.4.1.4"
+      }
+    },
+    {
+      "bom-ref": "691e4e9e-a3be-4cbb-9bb8-7a494d5ce9df",
+      "type": "cryptographic-asset",
+      "name": "secret-key@691e4e9e-a3be-4cbb-9bb8-7a494d5ce9df",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge13.java",
+            "line": 62,
+            "offset": 34,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "dd52a24e-8c48-4573-8b91-0ffe78b6ef92",
+      "type": "cryptographic-asset",
+      "name": "secret-key@dd52a24e-8c48-4573-8b91-0ffe78b6ef92",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge54.java",
+            "line": 42,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "bom-ref": "c83729e9-726f-4da8-9360-4505f8a3c65a",
+      "type": "cryptographic-asset",
+      "name": "secret-key@c83729e9-726f-4da8-9360-4505f8a3c65a",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge39.java",
+            "line": 51,
+            "offset": 32,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "bom-ref": "d130197b-6889-495a-8e76-ac006f52b03e",
+      "type": "cryptographic-asset",
+      "name": "iv@d130197b-6889-495a-8e76-ac006f52b03e",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge54.java",
+            "line": 40,
+            "offset": 35,
+            "additionalContext": "javax.crypto.spec.IvParameterSpec#\u003cinit\u003e([B)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "initialization-vector",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "f4f1762d-88c6-4309-b9e1-d619ecedbfd9",
+      "type": "cryptographic-asset",
+      "name": "secret-key@f4f1762d-88c6-4309-b9e1-d619ecedbfd9",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/kubernetes/Challenge33.java",
+            "line": 52,
+            "offset": 31,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "12c1a62f-ddf0-4bca-ac09-ab0903642a18",
+      "type": "cryptographic-asset",
+      "name": "secret-key@12c1a62f-ddf0-4bca-ac09-ab0903642a18",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge63.java",
+            "line": 38,
+            "offset": 34,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key",
+          "size": 128
+        }
+      }
+    },
+    {
+      "bom-ref": "e6769585-f64d-4445-ac7c-780c83037244",
+      "type": "cryptographic-asset",
+      "name": "private-key@e6769585-f64d-4445-ac7c-780c83037244",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge29.java",
+            "line": 70,
+            "offset": 22,
+            "additionalContext": "java.security.KeyFactory#getInstance(Ljava/lang/String;)Ljava/security/KeyFactory;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      }
+    },
+    {
+      "bom-ref": "bb6a86e6-cf81-4d86-89ca-16b5d44e3363",
+      "type": "cryptographic-asset",
+      "name": "AES-128-CBC-PKCS5",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge63.java",
+            "line": 41,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge54.java",
+            "line": 42,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "parameterSetIdentifier": "128",
+          "mode": "cbc",
+          "padding": "pkcs5",
+          "cryptoFunctions": [
+            "decrypt"
+          ]
+        },
+        "oid": "2.16.840.1.101.3.4.1.2"
+      }
+    },
+    {
+      "bom-ref": "4dadfbd8-9f43-4c83-b4eb-9b56a75da74b",
+      "type": "cryptographic-asset",
+      "name": "SHA-256",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge29.java",
+            "line": 29,
+            "offset": 20,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge54.java",
+            "line": 36,
+            "offset": 26,
+            "additionalContext": "java.security.MessageDigest#getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "256",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        },
+        "oid": "2.16.840.1.101.3.4.2.1"
+      }
+    },
+    {
+      "bom-ref": "aeae99ec-1b47-47bd-8762-21e113ca51a2",
+      "type": "cryptographic-asset",
+      "name": "secret-key@aeae99ec-1b47-47bd-8762-21e113ca51a2",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge39.java",
+            "line": 56,
+            "offset": 22,
+            "additionalContext": "javax.crypto.Cipher#getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "bom-ref": "69843fad-cb19-4b41-b1d8-c752aefb8509",
+      "type": "cryptographic-asset",
+      "name": "secret-key@69843fad-cb19-4b41-b1d8-c752aefb8509",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge54.java",
+            "line": 38,
+            "offset": 36,
+            "additionalContext": "javax.crypto.spec.SecretKeySpec#\u003cinit\u003e([BLjava/lang/String;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      }
+    },
+    {
+      "bom-ref": "95757624-3e04-439e-a021-a5e3caed27bb",
+      "type": "cryptographic-asset",
+      "name": "MD5",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge41.java",
+            "line": 52,
+            "offset": 23,
+            "additionalContext": "java.security.MessageDigest#getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge49.java",
+            "line": 68,
+            "offset": 23,
+            "additionalContext": "java.security.MessageDigest#getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;"
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge18.java",
+            "line": 56,
+            "offset": 25
+          },
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge18.java",
+            "line": 56,
+            "offset": 83
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "parameterSetIdentifier": "128",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": ".github/scripts/.bash_history",
+            "line": 349
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "Dockerfile.web",
+            "line": 0
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "aws/k8s/secret-challenge-vault-deployment.yml",
+            "line": 60
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "azure/k8s/secret-challenge-vault-deployment.yml.tpl",
+            "line": 63
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "fly.toml",
+            "line": 10
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "gcp/k8s/secret-challenge-vault-deployment.yml.tpl",
+            "line": 60
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "kubernetes-secret-yaml",
+      "description": "Possible Kubernetes Secret detected, posing a risk of leaking credentials/tokens from your deployments",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "k8s/challenge33.yml",
+            "line": 1
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "k8s/sealed-challenge48.json",
+            "line": 17
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "k8s/secret-challenge-deployment.yml",
+            "line": 30
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "k8s/secret-challenge-vault-deployment.yml",
+            "line": 52
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "kubernetes-secret-yaml",
+      "description": "Possible Kubernetes Secret detected, posing a risk of leaking credentials/tokens from your deployments",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "k8s/secrets-secret.yml",
+            "line": 1
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "kubernetes-secret-yaml",
+      "description": "Possible Kubernetes Secret detected, posing a risk of leaking credentials/tokens from your deployments",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "okteto/k8s/challenge33.yml",
+            "line": 1
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "okteto/k8s/secret-challenge-ctf-deployment.yml",
+            "line": 30
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "okteto/k8s/secret-challenge-ctf-deployment.yml",
+            "line": 98
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "okteto/k8s/secret-challenge-deployment.yml",
+            "line": 30
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "okteto/k8s/secret-challenge-deployment.yml",
+            "line": 79
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "kubernetes-secret-yaml",
+      "description": "Possible Kubernetes Secret detected, posing a risk of leaking credentials/tokens from your deployments",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "okteto/k8s/secrets-secret.yml",
+            "line": 1
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "scripts/generate-slack-webhook.sh",
+            "line": 9
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "sonar-api-token",
+      "description": "Uncovered a Sonar API token, potentially compromising software vulnerability scanning and code security.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "sonar-project.properties",
+            "line": 5
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/canaries/AdditionalCanaryData.java",
+            "line": 24
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "private-key",
+      "description": "Identified a Private Key, which may compromise cryptographic security and sensitive data encryption.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge29.java",
+            "line": 58
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge54.java",
+            "line": 31
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/Challenge59.java",
+            "line": 43
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/WrongSecretsConstants.java",
+            "line": 9
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/java/org/owasp/wrongsecrets/challenges/docker/authchallenge/Challenge37.java",
+            "line": 22
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/resources/application.properties",
+            "line": 74
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/resources/executables/decrypt/lib/aes.c",
+            "line": 17
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/resources/executables/secrchallenge.json",
+            "line": 1
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/resources/executables/secrchallenge.json",
+            "line": 2
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "vault-service-token",
+      "description": "Identified a Vault Service Token, potentially compromising infrastructure security and access to sensitive credentials.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/resources/explanations/challenge44_hint.adoc",
+            "line": 11
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "vault-service-token",
+      "description": "Identified a Vault Service Token, potentially compromising infrastructure security and access to sensitive credentials.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/resources/explanations/challenge45_hint.adoc",
+            "line": 11
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/resources/explanations/challenge59_hint.adoc",
+            "line": 21
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "vault-service-token",
+      "description": "Identified a Vault Service Token, potentially compromising infrastructure security and access to sensitive credentials.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/main/resources/explanations/challenge7_hint.adoc",
+            "line": 7
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/org/owasp/wrongsecrets/challenges/docker/Challenge13Test.java",
+            "line": 18
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/org/owasp/wrongsecrets/challenges/docker/Challenge13Test.java",
+            "line": 33
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/org/owasp/wrongsecrets/challenges/docker/Challenge13Test.java",
+            "line": 47
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/org/owasp/wrongsecrets/challenges/docker/Challenge59Test.java",
+            "line": 13
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/org/owasp/wrongsecrets/challenges/docker/Challenge59Test.java",
+            "line": 24
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/org/owasp/wrongsecrets/challenges/docker/Challenge59Test.java",
+            "line": 35
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/org/owasp/wrongsecrets/challenges/docker/Challenge59Test.java",
+            "line": 46
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/org/owasp/wrongsecrets/challenges/docker/Challenge59Test.java",
+            "line": 61
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/java/org/owasp/wrongsecrets/challenges/docker/Challenge59Test.java",
+            "line": 70
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "bom-ref": "c1a53a54-36ba-408b-b1c4-8452d6a56d66",
+      "type": "cryptographic-asset",
+      "name": "RSA-2048",
+      "description": "Identified a Private Key, which may compromise cryptographic security and sensitive data encryption.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "src/test/resources/RSAprivatekey.pem",
+            "line": 0
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key",
+          "size": 2048,
+          "format": "PEM"
+        },
+        "oid": "1.2.840.113549.1.1.1"
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/application.properties",
+            "line": 74
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/executables/decrypt/lib/aes.c",
+            "line": 17
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/executables/secrchallenge.json",
+            "line": 1
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/executables/secrchallenge.json",
+            "line": 2
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "vault-service-token",
+      "description": "Identified a Vault Service Token, potentially compromising infrastructure security and access to sensitive credentials.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/explanations/challenge44_hint.adoc",
+            "line": 11
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "vault-service-token",
+      "description": "Identified a Vault Service Token, potentially compromising infrastructure security and access to sensitive credentials.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/explanations/challenge44_hint.html",
+            "line": 25
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "vault-service-token",
+      "description": "Identified a Vault Service Token, potentially compromising infrastructure security and access to sensitive credentials.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/explanations/challenge45_hint.adoc",
+            "line": 11
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "vault-service-token",
+      "description": "Identified a Vault Service Token, potentially compromising infrastructure security and access to sensitive credentials.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/explanations/challenge45_hint.html",
+            "line": 25
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/explanations/challenge59_hint.adoc",
+            "line": 21
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/explanations/challenge59_hint.html",
+            "line": 48
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/explanations/challenge59_hint.html",
+            "line": 48
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "vault-service-token",
+      "description": "Identified a Vault Service Token, potentially compromising infrastructure security and access to sensitive credentials.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/explanations/challenge7_hint.adoc",
+            "line": 7
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "vault-service-token",
+      "description": "Identified a Vault Service Token, potentially compromising infrastructure security and access to sensitive credentials.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/explanations/challenge7_hint.html",
+            "line": 15
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "private-key",
+      "description": "Identified a Private Key, which may compromise cryptographic security and sensitive data encryption.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/org/owasp/wrongsecrets/challenges/docker/Challenge29.class",
+            "line": 10
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "name": "slack-webhook-url",
+      "description": "Discovered a Slack Webhook, which could lead to unauthorized message posting and data leakage in Slack channels.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "target/classes/org/owasp/wrongsecrets/challenges/docker/Challenge59.class",
+            "line": 8
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "ba679816-46a3-4e57-a52e-87f180edfb14",
+      "dependsOn": [
+        "9176730b-182d-4bd6-9538-b0acc5bbd0ec"
+      ]
+    },
+    {
+      "ref": "818dfe34-785c-42ba-bed5-bc3965c14a44",
+      "dependsOn": [
+        "bb6a86e6-cf81-4d86-89ca-16b5d44e3363"
+      ]
+    },
+    {
+      "ref": "db9a1625-1dcc-44c3-bc59-322d8f7eef6c",
+      "dependsOn": [
+        "68fdd81a-434c-4825-9aee-ad3c7f37cbe5"
+      ]
+    },
+    {
+      "ref": "d493fb62-3521-45c1-a22a-861d2ffdca4c",
+      "dependsOn": [
+        "9176730b-182d-4bd6-9538-b0acc5bbd0ec"
+      ]
+    },
+    {
+      "ref": "c08e03ba-661d-4430-95ec-dfc5f05f5c90",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "dd52a24e-8c48-4573-8b91-0ffe78b6ef92",
+      "dependsOn": [
+        "bb6a86e6-cf81-4d86-89ca-16b5d44e3363"
+      ]
+    },
+    {
+      "ref": "9fd35561-e9a5-4296-83a8-c25735440887",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "f4f1762d-88c6-4309-b9e1-d619ecedbfd9",
+      "dependsOn": [
+        "9176730b-182d-4bd6-9538-b0acc5bbd0ec"
+      ]
+    },
+    {
+      "ref": "5132b7de-7ccc-4436-baea-f6cb891afa32",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "f1739159-493a-4eaf-99f6-061f9f66705d",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "96ff38da-bfb4-4b48-a3ef-098f7f080c60",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "00a5417e-3ab6-4083-9702-511282b9d2e0",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "12c1a62f-ddf0-4bca-ac09-ab0903642a18",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "5d30a4fe-11ff-4701-9e5f-18fb6b002c16",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "9176730b-182d-4bd6-9538-b0acc5bbd0ec",
+      "dependsOn": [
+        "73a59cf1-b898-45e9-bff8-bca27f51e08f",
+        "3ecf2dcc-3048-417e-9f3e-c475ba200e94"
+      ]
+    },
+    {
+      "ref": "68fdd81a-434c-4825-9aee-ad3c7f37cbe5",
+      "dependsOn": [
+        "a3c56fcb-19cf-444e-a1f3-cfbfd9dd3c17"
+      ]
+    },
+    {
+      "ref": "49327176-304c-43fd-8726-bd185f722bd5",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "cbb78b09-a4b3-4a8a-8e2b-96dfcf17031e",
+      "dependsOn": [
+        "8a18d367-5cef-43f0-b394-18f84014346b"
+      ]
+    },
+    {
+      "ref": "bb6a86e6-cf81-4d86-89ca-16b5d44e3363",
+      "dependsOn": [
+        "c95f05e3-3fdb-4246-a55f-d4410b4ffcae",
+        "d130197b-6889-495a-8e76-ac006f52b03e"
+      ]
+    },
+    {
+      "ref": "876392d2-c9b2-4042-91ae-3476928ae4a7",
+      "dependsOn": [
+        "9176730b-182d-4bd6-9538-b0acc5bbd0ec"
+      ]
+    },
+    {
+      "ref": "a11d413b-65da-4e8a-a2aa-737c57b4287d",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "6f2dc7dd-19c1-4848-8157-5bfa1ff6ecd2",
+      "dependsOn": [
+        "8dd5d1b0-a67d-4b06-b288-41dc9d97bda4"
+      ]
+    },
+    {
+      "ref": "8a18d367-5cef-43f0-b394-18f84014346b",
+      "dependsOn": [
+        "fb692480-3cba-4904-b0d1-3a5148a7c888"
+      ]
+    },
+    {
+      "ref": "59936cf7-2b41-4206-9fd9-ad40747fdce4",
+      "dependsOn": [
+        "9176730b-182d-4bd6-9538-b0acc5bbd0ec"
+      ]
+    },
+    {
+      "ref": "aeae99ec-1b47-47bd-8762-21e113ca51a2",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "69843fad-cb19-4b41-b1d8-c752aefb8509",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "e6769585-f64d-4445-ac7c-780c83037244",
+      "dependsOn": [
+        "180a3f5c-8c0c-4f60-abba-c118f3966575"
+      ]
+    },
+    {
+      "ref": "b1fa356a-a2d6-458b-93d5-7db496e6b3ac",
+      "dependsOn": [
+        "c6daf860-b419-4939-a3a2-5a2d9d00981f",
+        "4dadfbd8-9f43-4c83-b4eb-9b56a75da74b"
+      ]
+    },
+    {
+      "ref": "fa00384d-2985-4a9f-a629-5f655f129109",
+      "dependsOn": [
+        "9176730b-182d-4bd6-9538-b0acc5bbd0ec"
+      ]
+    },
+    {
+      "ref": "691e4e9e-a3be-4cbb-9bb8-7a494d5ce9df",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "8842a253-7890-46ba-99f7-fb4c8c0ab223",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    },
+    {
+      "ref": "7e54cd39-2483-42f3-b1b9-4690d0aef92c",
+      "dependsOn": [
+        "9176730b-182d-4bd6-9538-b0acc5bbd0ec"
+      ]
+    },
+    {
+      "ref": "c83729e9-726f-4da8-9360-4505f8a3c65a",
+      "dependsOn": [
+        "b33aac8d-722e-41e1-bfb8-34a23785db20"
+      ]
+    }
+  ]
+}
